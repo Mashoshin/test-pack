@@ -1,5 +1,6 @@
 {
     "name": "mashoshin/data-layer",
+    "version": "dev-main",
     "type": "library",
     "authors": [
         {
