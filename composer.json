@@ -1,0 +1,22 @@
+{
+    "name": "mashoshin/data-layer",
+    "type": "library",
+    "authors": [
+        {
+            "name": "evgeniy.mashoshin",
+            "email": "evgeniy.mashoshin@simpleone.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DataLayer\\": "src/"
+        }
+    },
+    "require": {
+        "doctrine/orm": "^2.10",
+        "doctrine/migrations": "^3.2",
+        "symfony/cache": "^5.3",
+        "symfony/console": "^5.3",
+        "symfony/yaml": "^5.3",
+    }
+}
