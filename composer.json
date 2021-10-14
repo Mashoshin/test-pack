@@ -1,7 +1,8 @@
 {
-    "repositories": [
-        { "name": "rust-cup-game/data-layer", "type": "vcs", "url": "https://github.com/Mashoshin/test-pack" }
-    ],
+    "name": "shosha/test",
+    "description": "test",
+    "type": "library",
+    "license": "proprietary",
     "authors": [
         {
             "name": "evgeniy.mashoshin",
@@ -20,5 +21,6 @@
         "symfony/console": "^5.3",
         "symfony/yaml": "^5.3",
         "php-di/php-di": "^6.3"
-    }
+    },
+    "minimum-stability": "dev"
 }
