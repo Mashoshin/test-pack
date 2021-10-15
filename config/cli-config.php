@@ -14,19 +14,15 @@ $paths = [
     'App\\' => __DIR__ . "/../src/Entity",
 ];
 
-// Tells Doctrine what mode we want
-$isDevMode = true;
-
-$ORMConfig = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode);
+$ORMConfig = Setup::createAnnotationMetadataConfiguration($paths);
 
 // Doctrine connection configuration
 $dbParams = [
-    'driver'   => 'pdo_pgsql',
-    'user'     => 'admin',
-    'password' => '123456',
-    'dbname'   => 'ton-race',
-    'port' => '5441',
-    'host' => 'localhost'
+    'driver'   => getenv('DB_DRIVER'),
+    'user'     => getenv('DB_USER'),
+    'password' => getenv('DB_PASSWORD'),
+    'dbname'   => getenv('DB_NAME'),
+    'host' => getenv('DB_HOST')
 ];
 
 $entityManager = EntityManager::create($dbParams, $ORMConfig);
