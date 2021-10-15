@@ -11,7 +11,7 @@ class Account
     /**
      * @Id
      * @Column(type="integer")
-     * @GeneratedValue
+     * @GeneratedValue(strategy="IDENTITY")
      */
     private int $id;
 
@@ -19,11 +19,6 @@ class Account
      * @Column(type="string", length=68, nullable=false)
      */
     private string $address;
-
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
 
     public function getId(): int
     {

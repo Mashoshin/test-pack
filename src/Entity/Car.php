@@ -11,7 +11,7 @@ class Car
     /**
      * @Id
      * @Column(type="integer")
-     * @GeneratedValue
+     * @GeneratedValue(strategy="IDENTITY")
      */
     private int $id;
 
@@ -21,17 +21,33 @@ class Car
     private string $address;
 
     /**
-     * @ManyToOne(targetEntity="Account")
+     * @ManyToOne(targetEntity="Account", cascade={"persist", "remove"})
      * @JoinColumn(name="owner_id", referencedColumnName="id", onDelete="CASCADE")
      */
-    public $owner_id;
+    public Account $owner;
 
-    public function getAll(): array
+    public function getId(): int
     {
-        return [
-            $this->id,
-            $this->address,
-            $this->owner_id
-        ];
+        return $this->id;
+    }
+
+    public function getAddress(): string
+    {
+        return $this->address;
+    }
+
+    public function setAddress(string $address): void
+    {
+        $this->address = $address;
+    }
+
+    public function getOwner(): Account
+    {
+        return $this->owner;
+    }
+
+    public function setOwner(Account $owner): void
+    {
+        $this->owner = $owner;
     }
 }
