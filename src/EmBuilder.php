@@ -18,12 +18,6 @@ class EmBuilder
     public static function build(): EntityManagerInterface
     {
 		$OrmConfig = Setup::createAnnotationMetadataConfiguration(self::PATH_TO_ENTITIES);
-		return EntityManager::create([
-			'driver'   => getenv('DB_DRIVER'),
-			'user'     => getenv('DB_USER'),
-			'password' => getenv('DB_PASSWORD'),
-			'dbname'   => getenv('DB_NAME'),
-			'host' => getenv('DB_HOST')
-		], $OrmConfig);
+		return EntityManager::create(require '../config/db-config.php', $OrmConfig);
     }
 }

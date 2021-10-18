@@ -45,8 +45,13 @@ class Track
         return $this->state;
     }
 
-    public function setState(string $state): void
+    public function setInProgress(): void
     {
-        $this->state = $state;
+        $this->state = 'in progress';
+    }
+
+    public function setCompleted(): void
+    {
+        $this->state = 'completed';
     }
 }

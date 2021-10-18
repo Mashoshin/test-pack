@@ -10,7 +10,7 @@ return [
     ],
 
     'migrations_paths' => [
-        'DataLayer\Migrations' => './src/Migrations',
+        'DataLayer\Migrations' => __DIR__ . '/../src/Migrations',
     ],
 
     'all_or_nothing' => true,

@@ -28,14 +28,29 @@ class SectionResult
     private Section $section;
 
     /**
-     * @Column(type="decimal", name="end_speed")
+     * @Column(type="integer", name="start_speed")
      */
-    private float $endSpeed;
+    private int $startSpeed;
 
     /**
-     * @Column(type="decimal", name="points")
+     * @Column(type="integer", name="end_speed")
      */
-    private float $points;
+    private int $endSpeed;
+
+    /**
+     * @Column(type="integer", name="start_points")
+     */
+    private int $startPoints;
+
+    /**
+     * @Column(type="integer", name="end_points")
+     */
+    private int $endPoints;
+
+    /**
+     * @Column(type="boolean", name="is_control_lost")
+     */
+    private bool $isControlLost;
 
     public function getId(): int
     {
@@ -52,7 +67,17 @@ class SectionResult
         $this->car = $car;
     }
 
-    public function getEndSpeed(): float
+    public function getStartSpeed(): int
+    {
+        return $this->startSpeed;
+    }
+
+    public function setStartSpeed(int $startSpeed): void
+    {
+        $this->startSpeed = $startSpeed;
+    }
+
+    public function getEndSpeed(): int
     {
         return $this->endSpeed;
     }
@@ -72,13 +97,28 @@ class SectionResult
         $this->section = $section;
     }
 
-    public function getPoints(): float
+    public function getStartPoints(): float
     {
-        return $this->points;
+        return $this->startPoints;
     }
 
-    public function setPoints(float $points): void
+    public function setStartPoints(int $points): void
     {
-        $this->points = $points;
+        $this->startPoints = $points;
+    }
+
+    public function getEndPoints(): int
+    {
+        return $this->endPoints;
+    }
+
+    public function setEndPoints(int $endPoints): void
+    {
+        $this->endPoints = $endPoints;
+    }
+
+    public function isControlLost(): bool
+    {
+        return $this->isControlLost;
     }
 }

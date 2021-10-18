@@ -37,7 +37,7 @@ class TrackResult
      */
     private float $points;
 
-	public function getId(): int
+    public function getId(): int
 	{
 		return $this->id;
 	}
